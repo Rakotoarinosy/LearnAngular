@@ -72,7 +72,8 @@
                 [value]="type"
                 [checked]="hasType(type)"
                 [disabled]="!isTypesValid(type)"
-                (change)="selectType($event, type)"/>
+                (change)="selectType($event, type)"
+                placeholder="checkbox"/>
               <span [attr.for]="type">
                 <div class="{{ type | pokemonTypeColor }}">
                   {{ type }}
