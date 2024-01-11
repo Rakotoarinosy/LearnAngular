@@ -19,8 +19,7 @@
         </div>
 
         <!-- Pokemon picture -->
-        <!--div *ngIf="isAddForm" class="form-group"-->
-        <!--div--  class="form-group">
+        <div *ngIf="isAddForm" class="form-group">
           <label for="picture">Image</label>
           <input type="url" class="form-control" id="picture"
                   required
@@ -31,7 +30,7 @@
                 class="card-panel red accent-1">
                 L'image du pokémon est requise.
           </div>
-        </!--div-->
+        </div>
 
         <!-- Pokemon hp -->
         <div class="form-group">
@@ -62,9 +61,9 @@
         </div>
 
         <!-- Pokemon types -->
-        <form class="form-group">
+        <div class="form-group">
           <label for="types">Types</label>
-          <p *ngFor="let type of types">
+          <div *ngFor="let type of types">
             <label>
               <input type="checkbox"
                 class="filled-in"
@@ -72,16 +71,15 @@
                 [value]="type"
                 [checked]="hasType(type)"
                 [disabled]="!isTypesValid(type)"
-                (change)="selectType($event, type)"
-                placeholder="checkbox"/>
+                (change)="selectType($event, type)"/>
               <span [attr.for]="type">
                 <div class="{{ type | pokemonTypeColor }}">
                   {{ type }}
                 </div>
               </span>
             </label>
-          </p>
-        </form>
+          </div>
+        </div>
 
         <!-- Submit button -->
         <div class="divider"></div>
@@ -97,5 +95,5 @@
   </div>
 </form>
 <h3 *ngIf="!pokemon" class="center">
-  <!--app-loader></!--app-loader-->
+  <!--app-loader></!app-loader-->
 </h3>

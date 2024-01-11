@@ -17,11 +17,11 @@ export class ListPokemonComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-      this.pokemonList = this.pokemonService.getPokemonList();
+    this.pokemonService.getPokemonList()
+      .subscribe(pokemonList => this.pokemonList = pokemonList);
   }
 
   goToPokemon(pokemon: Pokemon) {
-    console.log('test');
     this.router.navigate(['/pokemon', pokemon.id])
   }
 }
