@@ -8,8 +8,8 @@ describe('PokemonFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PokemonFormComponent]
-    })
+    imports: [PokemonFormComponent]
+})
     .compileComponents();
     
     fixture = TestBed.createComponent(PokemonFormComponent);
